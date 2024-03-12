@@ -1,16 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.validatePassword = exports.validateEmail = exports.validateMobileNumber = void 0;
-function validateMobileNumber(number) {
+exports.validatePassword = exports.validateEmail = exports.validateMobileNumberString = exports.validateMobileNumberInt = void 0;
+function validateMobileNumberString(number) {
     var mobileNumberRegex = /^[0-9]{10}$/;
     return mobileNumberRegex.test(number);
 }
-exports.validateMobileNumber = validateMobileNumber;
+exports.validateMobileNumberString = validateMobileNumberString;
+
+function validateMobileNumberInt(number) {
+    var mobileNumberString = number.toString().replace(/^0+/, '');
+    var mobileNumberRegex = /^[0-9]{10}$/;
+    return mobileNumberRegex.test(mobileNumberString);
+}
+exports.validateMobileNumberInt = validateMobileNumberInt;
+
 function validateEmail(email) {
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 exports.validateEmail = validateEmail;
+
 function validatePassword(password, structure, minLength) {
     var structureRegex = /^(?=.*[A-Z]*)(?=.*[a-z]*)(?=.*\d*)(?=.*[@#$%^&+=]*)[A-Za-z\d@#$%^&+=]*$/;
     if (!structureRegex.test(structure)) {

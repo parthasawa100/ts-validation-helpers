@@ -1,6 +1,12 @@
-function validateMobileNumber(number: string): boolean {
+function validateMobileNumberString(number: string): boolean {
     const mobileNumberRegex = /^[0-9]{10}$/;
     return mobileNumberRegex.test(number);
+}
+
+function validateMobileNumberInt(number: number): boolean {
+    const mobileNumberString = number.toString().replace(/^0+/, '');
+    const mobileNumberRegex = /^[0-9]{10}$/;
+    return mobileNumberRegex.test(mobileNumberString);
 }
 
 function validateEmail(email: string): boolean {
@@ -42,4 +48,4 @@ function validatePassword(password: string, structure: string, minLength: number
     return true;
 }
 
-export { validateMobileNumber, validateEmail, validatePassword };
+export { validateMobileNumberString,validateMobileNumberInt, validateEmail, validatePassword };
