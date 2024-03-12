@@ -1,0 +1,24 @@
+{
+  "name": "ts-validation-helpers",
+  "version": "1.0.2",
+  "description": "Validation for modile number, email and password in typescript",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "parth asawa <parthasawa100@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parthasawa100/ts-validation-helpers.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "typescript",
+    "authentication",
+    "validation",
+    "typescript-validation",
+    "regex",
+    "security"
+  ]
+}
